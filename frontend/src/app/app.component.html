@@ -1,0 +1,20 @@
+<mat-toolbar>
+  <app-category />
+  <mat-icon
+    (click)="showCart()"
+    class="icon"
+    [matBadge]="cartItemCount"
+    [matBadgeHidden]="cartItemCount == 0"
+    matBadgePosition="after"
+    matBadgeColor="accent"
+    aria-hidden="false"
+    >shopping_basket
+    </mat-icon>
+</mat-toolbar>
+<div *ngIf="show" class="cart"><app-cart/></div>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <app-item/>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

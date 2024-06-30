@@ -1,0 +1,81 @@
+<div class="main-container">
+  <div *ngIf="itemsInCart() > 0; else emptyCart">
+    <div class="font">
+      <span>My Bag,</span>
+      {{
+        itemsInCart() > 1 ? itemsInCart() + " items" : itemsInCart() + " item"
+      }}
+    </div>
+    <div class="item-container" *ngFor="let cartItem of addedItemsInCart">
+      <div class="selector-container">
+        <div class="selector" (click)="increment(cartItem.item.id)" >+</div>
+        <div>{{cartItem.count}}</div>
+        <div class="selector" (click)="decrement(cartItem.item.id)">-</div>
+      </div>
+      <div class="img-container">
+        <img
+          [src]="
+            'data:' +
+            cartItem.item.contentType +
+            ';base64,' +
+            cartItem.item.imageData
+          "
+          [alt]="cartItem.item.name"
+        />
+      </div>
+      <div class="name-prace-container">
+        <div>
+          {{ cartItem.item.name }}
+        </div>
+        <div>
+          {{ cartItem.item.price | currency : "EUR" : "symbol" }}
+        </div>
+      </div>
+      <div>
+        <div class="font-size-color">
+          {{ "Size:" }}
+        </div>
+        <button
+          *ngFor="let size of itemSizes.get(cartItem.item.id)"
+          class="size-box-container"
+          aria-label="size options"
+          [ngClass]="{ 'selected-box': cartItem.size === size }"
+          (click)="setSize(cartItem.item.id, size)"
+        >
+          <div class="size-box">
+           {{ size }}
+          </div>
+        </button>
+      </div>
+      <div>
+        <div class="font-size-color">
+          {{ "Color:" }}
+        </div>
+        <button
+          *ngFor="let color of itemColors.get(cartItem.item.id)"
+          class="color-box-container"
+          aria-label="color options"
+          [ngClass]="{ 'selected-box': cartItem.color === color }"
+          (click)="setColor(cartItem.item.id, color)"
+        >
+          <div class="color-box" [style.backgroundColor]="color">
+          </div>
+        </button>
+      </div>
+    </div>
+    <div *ngIf="totalPrice() > 0">
+      <span> Total </span>
+      <span class="total-price">
+        {{ totalPrice() | currency : "EUR" : "symbol" }}
+      </span>
+    </div>
+    <div>
+      <button class="order-button">PLACE ORDER</button>
+    </div>
+  </div>
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      Cart is empty
+    </div>
+  </ng-template>
+</div>

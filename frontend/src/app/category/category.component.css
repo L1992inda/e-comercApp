@@ -1,0 +1,11 @@
+
+div {
+  display: flex;
+  justify-content: flex-end;
+  width:20rem;
+}
+mat-list {
+  text-align: center;
+  text-transform: capitalize;
+}
+

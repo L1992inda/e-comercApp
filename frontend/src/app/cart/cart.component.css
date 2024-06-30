@@ -1,0 +1,96 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+span {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.font {
+  font-size: 0.75rem;
+}
+
+.font-size-color {
+  font-size: 0.65rem;
+}
+
+.item-container {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.name-prace-container {
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.img-container {
+  position: absolute;
+  right: 1rem;
+}
+
+.selector-container {
+  position: absolute;
+  right: 8.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border: 0.05rem solid grey;
+}
+
+img {
+  height: 8.5rem;
+  width: 7rem;
+}
+
+.size-box-container {
+  height: 1rem;
+  width: 1.2rem;
+  margin: 0.1rem;
+}
+
+.size-box {
+  text-transform: capitalize;
+  font-size: 0.4rem;
+}
+
+.color-box-container {
+  padding: 0.05rem;
+  margin: 0.1rem;
+}
+
+.color-box {
+  height: 0.6rem;
+  width: 0.7rem;
+}
+
+.total-price {
+  position: absolute;
+  right: 1rem;
+}
+
+.order-button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.3rem;
+  color: white;
+  background-color: #68e368;
+  border: none;
+}
+
+.empty-cart{
+  position:absolute;
+  top:5rem;
+  left:6rem;
+}

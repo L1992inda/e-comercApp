@@ -1,0 +1,48 @@
+<div class="main-container">
+  <div *ngFor="let item of itemDescriptions" class="container">
+    <mat-card>
+      <img
+        mat-card-xl-image
+        [src]="'data:' + item.contentType + ';base64,' + item.imageData"
+        [alt]="item.name"
+      />
+    </mat-card>
+    <div>
+      <span class="item-name">
+        {{ item.name }}</span>
+      <span class="item-price">
+        {{ item.price | currency : "EUR" : "symbol" }}
+      </span>
+      <div>
+        <button
+          *ngFor="let color of uniqueColors"
+          class="color-box-container"
+          aria-label="color options"
+          title="set color"
+          [disabled]="disable(item.id, color) === true"
+          [ngClass]="{ 'selected-box': selectedColor.get(item.id) === color, 'color-box-disable': disable(item.id, color)}"
+          (click)="setColor(item.id, color)"
+        >
+          <div class="color-box"
+           [ngStyle]="{'background-color': disable(item.id, color) ? '#d6d6c2' : color}">
+          </div>
+        </button>
+      </div>
+      <div>
+        <button
+          *ngFor="let size of uniqueSizes"
+          class="size-box-container"
+          aria-label="size options"
+          title="set size"
+          [ngClass]="{ 'selected-box': selectedSize.get(item.id) === size }"
+          (click)="setSize(item.id, size)"
+        >
+          <div class="size-box">{{ size }}</div>
+        </button>
+      </div>
+      <button (click)="addToCart(item)" class="cart-button-container">
+        <div class="cart-button" aria-label="Add to cart">add to cart</div>
+      </button>
+    </div>
+  </div>
+</div>

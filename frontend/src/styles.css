@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+html,
+body {
+  height: 100%;  
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.selected-box{
+  border: 0.1rem solid #8be98b;
+  border-radius:0.1rem;
+}
+
+
+

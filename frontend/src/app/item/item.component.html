@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div *ngFor="let category of categoryItems">
+    <span class="title">{{ category.name  }} </span>
+    <div class="container">
+      <div *ngFor="let item of category.items">
+        <mat-card>
+          <img
+            [routerLink]="['/item', item.id, item.name]"
+            mat-card-xl-image
+            [src]="'data:' + item.contentType + ';base64,' + item.imageData"
+            alt="{{ item.name }}"
+          />
+          <mat-card-actions *ngIf="showShoppingicon(item.id)">
+            <mat-icon (click)="toCart(item)">add_shopping_cart </mat-icon>
+          </mat-card-actions>
+          <mat-card-content>
+              {{ item.price | currency : "EUR" : "symbol" }}
+            <mat-card-subtitle>
+              {{ item.name }}
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

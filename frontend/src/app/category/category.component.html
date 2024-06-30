@@ -1,0 +1,6 @@
+<div>
+<mat-list *ngFor="let category of categories">
+  <a mat-list-item style="cursor:pointer" [routerLink]="['/category', category.id, category.name]">
+  {{category.name}}</a>
+</mat-list>
+</div>
