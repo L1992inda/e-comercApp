@@ -1,6 +1,5 @@
 package com.eCommerceApp.backend.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +13,6 @@ import jakarta.validation.constraints.NotNull;
 public class Description {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
     private Integer id;
     @NotBlank
     private String size;

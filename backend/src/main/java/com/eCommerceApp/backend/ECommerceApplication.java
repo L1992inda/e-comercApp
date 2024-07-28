@@ -11,7 +11,6 @@ public class ECommerceApplication {
 
 	public static void main(String[] args) throws SQLException {
 		SpringApplication.run(ECommerceApplication.class, args);
-		System.out.println("hello");
 	}
 
 }

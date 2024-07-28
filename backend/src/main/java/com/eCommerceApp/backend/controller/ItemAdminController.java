@@ -26,7 +26,7 @@ import jakarta.validation.Valid;
 public class ItemAdminController {
 
     private final ItemAdminService itemAdminService;
-    private final String path = "src/main/resources/img/";
+    private final String path = "src/main/resources/static/img/";
 
 
     public ItemAdminController(ItemAdminService itemAdminService) {

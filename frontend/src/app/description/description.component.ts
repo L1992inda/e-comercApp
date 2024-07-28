@@ -85,6 +85,10 @@ export class DescriptionComponent implements OnInit {
     this.selectedSize.set(itemId, size);
   }
 
+  showAddToChartButton(id: number,itemDescription:Description[]):boolean{
+    return itemDescription.some( desc => desc.quantity > 0);
+  }
+
   addToCart(item: ItemDTO) {
     const color = this.selectedColor.get(item.id);
     const size = this.selectedSize.get(item.id);

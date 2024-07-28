@@ -40,7 +40,7 @@
           <div class="size-box">{{ size }}</div>
         </button>
       </div>
-      <button (click)="addToCart(item)" class="cart-button-container">
+      <button *ngIf="showAddToChartButton(item.id,item.descriptions)" (click)="addToCart(item)" class="cart-button-container">
         <div class="cart-button" aria-label="Add to cart">add to cart</div>
       </button>
     </div>

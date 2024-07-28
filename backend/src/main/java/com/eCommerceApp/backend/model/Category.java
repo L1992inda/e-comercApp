@@ -3,7 +3,6 @@ package com.eCommerceApp.backend.model;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,10 +14,8 @@ import jakarta.validation.constraints.NotBlank;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
     private Integer id;
     @NotBlank
-    @Column(updatable = false)
     private String name;
     @OneToMany(mappedBy = "category", cascade=CascadeType.REMOVE)
     private List<Item> itemList;
